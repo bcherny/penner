@@ -1,0 +1,35 @@
+{
+  "name": "penner",
+  "version": "0.1.0",
+  "description": "Penner's easing equations",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eighttrackmind/penner.git"
+  },
+  "author": "Boris Cherny <boris@performancejs.com>",
+  "contributors": [
+    {
+      "name": "Boris Cherny",
+      "email": "boris@performancejs.com"
+    }
+  ],
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-contrib-coffee": "~0.7.0"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "dependencies": {},
+  "keywords": [
+    "easing",
+    "ease",
+    "transition",
+    "tween",
+    "animation",
+    "css",
+    "effects",
+    "animationframe",
+    "transform"
+  ]
+}
