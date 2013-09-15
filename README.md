@@ -22,6 +22,7 @@ var t = 0,		// current time (ms, s, frames, ...)
 
 ## size
 
+|						|				|
 |-----------------------|---------------|
 | Raw					| 6400 bytes	|
 | Uglified				| 3224 bytes	|
