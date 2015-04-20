@@ -1,11 +1,11 @@
 {
   "name": "penner",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Penner's easing equations",
   "main": "penner.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/eighttrackmind/penner.git"
+    "url": "https://github.com/bcherny/penner.git"
   },
   "author": "Boris Cherny <boris@performancejs.com>",
   "contributors": [
