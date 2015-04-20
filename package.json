@@ -1,6 +1,6 @@
 {
   "name": "penner",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Penner's easing equations",
   "main": "penner.js",
   "repository": {
