@@ -38,30 +38,30 @@ penner =
 
 	linear: (t, b, c, d) ->
 
-		ct / d + b
+		c*t / d + b
 
 	easeInQuad: (t, b, c, d) ->
 
-		c(t /= d)t + b
+		c*(t /= d)*t + b
 
 	easeOutQuad: (t, b, c, d) ->
 
-		-c(t /= d)(t-2) + b
+		-c*(t /= d)*(t-2) + b
 	
 	easeInOutQuad: (t, b, c, d) ->
 
 		if (t /= d / 2) < 1
-			c / 2tt + b
+			c / 2*t*t + b
 		else
-			-c / 2((--t)(t - 2) - 1) + b
-	
+			-c / 2*((--t)*(t - 2) - 1) + b
+
 	easeInCubic: (t, b, c, d) ->
 
-		c(t /= d)tt + b
+		c*(t /= d)*t*t + b
 	
 	easeOutCubic: (t, b, c, d) ->
 
-		c((t=t/d-1)*t*t + 1) + b
+		c*((t=t/d-1)*t*t + 1) + b
 	
 	easeInOutCubic: (t, b, c, d) ->
 
@@ -76,14 +76,14 @@ penner =
 
 	easeOutQuart: (t, b, c, d) ->
 
-		-c((t=t/d-1)*t*t*t - 1) + b
+		-c*((t=t/d-1)*t*t*t - 1) + b
 
 	easeInOutQuart: (t, b, c, d) ->
 
 		if (t/=d/2) < 1
 			c/2*t*t*t*t + b
 		else
-			-c/2((t-=2)*t*t*t - 2) + b
+			-c/2*((t-=2)*t*t*t - 2) + b
 
 	easeInQuint: (t, b, c, d) ->
 
@@ -102,22 +102,22 @@ penner =
 
 	easeInSine: (t, b, c, d) ->
 
-		-cMath.cos(t/d(Math.PI/2)) + c + b
+		-c*Math.cos(t/d*(Math.PI/2)) + c + b
 
 	easeOutSine: (t, b, c, d) ->
 
-		cMath.sin(t/d(Math.PI/2)) + b
+		c*Math.sin(t/d*(Math.PI/2)) + b
 
 	easeInOutSine: (t, b, c, d) ->
-		-c/2(Math.cos(Math.PI*t/d) - 1) + b
+		-c/2*(Math.cos(Math.PI*t/d) - 1) + b
 
 	easeInExpo: (t, b, c, d) ->
 
-		t is 0 ? b : cMath.pow(2, 10(t/d - 1)) + b
+		if (t==0) then b else c * Math.pow(2, 10 * (t/d - 1)) + b;
 
 	easeOutExpo: (t, b, c, d) ->
 
-		t is d ? b+c : c(-Math.pow(2, -10t/d) + 1) + b
+		if (t==d) then b+c else  c * (-Math.pow(2, -10 * t/d) + 1) + b;
 
 	easeInOutExpo: (t, b, c, d) ->
 
@@ -126,24 +126,24 @@ penner =
 		if t is d
 			b+c
 		if (t/=d/2) < 1
-			c/2Math.pow(2, 10(t - 1)) + b
+			c/2*Math.pow(2, 10*(t - 1)) + b
 		else
-			c/2(-Math.pow(2, -10--t) + 2) + b
+			c/2*(-Math.pow(2, -10*--t) + 2) + b
 
 	easeInCirc: (t, b, c, d) ->
 
-		-c(Math.sqrt(1 - (t/=d)*t) - 1) + b
+		-c*(Math.sqrt(1 - (t/=d)*t) - 1) + b
 
 	easeOutCirc: (t, b, c, d) ->
 
-		cMath.sqrt(1 - (t=t/d-1)*t) + b
+		c*Math.sqrt(1 - (t=t/d-1)*t) + b
 
 	easeInOutCirc: (t, b, c, d) ->
 
 		if (t/=d/2) < 1
-			-c/2(Math.sqrt(1 - t*t) - 1) + b
+			-c/2*(Math.sqrt(1 - t*t) - 1) + b
 		else
-			c/2(Math.sqrt(1 - (t-=2)*t) + 1) + b
+			c/2*(Math.sqrt(1 - (t-=2)*t) + 1) + b
 
 	easeInElastic: (t, b, c, d) ->
 
@@ -162,9 +162,9 @@ penner =
 			a = c
 			s = p/4
 		else
-			s = p/(2*Math.PI)Math.asin (c/a)
+			s = p/(2*Math.PI)*Math.asin (c/a)
 		
-		-(a*Math.pow(2,10*(t-=1))Math.sin( (t*d-s)*(2*Math.PI)/p )) + b
+		-(a*Math.pow(2,10*(t-=1))*Math.sin( (t*d-s)*(2*Math.PI)/p )) + b
 
 	easeOutElastic: (t, b, c, d) ->
 
@@ -183,9 +183,9 @@ penner =
 			a = c
 			s = p/4
 		else
-			s = p/(2*Math.PI)Math.asin (c/a)
+			s = p/(2*Math.PI)*Math.asin (c/a)
 
-		a*Math.pow(2,-10*t)Math.sin( (t*d-s)*(2*Math.PI)/p ) + c + b
+		a*Math.pow(2,-10*t)*Math.sin( (t*d-s)*(2*Math.PI)/p ) + c + b
 
 	easeInOutElastic: (t, b, c, d) ->
 		
@@ -205,12 +205,12 @@ penner =
 			a = c
 			s = p/4
 		else
-			s = p/(2*Math.PI)Math.asin (c/a)
+			s = p/(2*Math.PI)*Math.asin (c/a)
 
 		if t < 1
-			-.5*(a*Math.pow(2,10*(t-=1))Math.sin( (t*d-s)*(2*Math.PI)/p )) + b
+			-.5*(a*Math.pow(2,10*(t-=1))*Math.sin( (t*d-s)*(2*Math.PI)/p )) + b
 		else
-			a*Math.pow(2,-10*(t-=1))Math.sin( (t*d-s)*(2*Math.PI)/p )*.5 + c + b
+			a*Math.pow(2,-10*(t-=1))*Math.sin( (t*d-s)*(2*Math.PI)/p )*.5 + c + b
 
 	easeInBack: (t, b, c, d, s) ->
 
@@ -256,9 +256,9 @@ penner =
 
 		if t < d/2
 			v = penner.easeInBounce t*2, 0, c, d
-			v.5 + b
+			v*.5 + b
 		else
 			v = penner.easeOutBounce t*2-d, 0, c, d
-			v.5 + c*.5 + b
+			v*.5 + c*.5 + b
 
 umd penner
