@@ -24,9 +24,9 @@ var t = 0,		// current time (ms, s, frames, ...)
 
 |						|				|
 |-----------------------|---------------|
-| Raw					| 6400 bytes	|
-| Uglified				| 3224 bytes	|
-| Uglified + gzipped	| 881 bytes		|
+| Raw					| 7880 bytes	|
+| Uglified				| 3200 bytes	|
+| Uglified + gzipped	| 865 bytes		|
 
 ## environment support
 

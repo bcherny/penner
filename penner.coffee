@@ -38,7 +38,7 @@ penner =
 
 	linear: (t, b, c, d) ->
 
-		c*t / d + b
+		c * t / d + b
 
 	easeInQuad: (t, b, c, d) ->
 
@@ -113,11 +113,11 @@ penner =
 
 	easeInExpo: (t, b, c, d) ->
 
-		if (t==0) then b else c * Math.pow(2, 10 * (t/d - 1)) + b;
+		if t is 0 then b else c * Math.pow(2, 10 * (t/d - 1)) + b
 
 	easeOutExpo: (t, b, c, d) ->
 
-		if (t==d) then b+c else  c * (-Math.pow(2, -10 * t/d) + 1) + b;
+		if t is d then b + c else c * (-Math.pow(2, -10 * t/d) + 1) + b
 
 	easeInOutExpo: (t, b, c, d) ->
 
